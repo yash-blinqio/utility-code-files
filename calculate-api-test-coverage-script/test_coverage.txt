@@ -1,6 +1,0 @@
-✅ { data: {} }
-┌─────────┐
-│ (index) │
-├─────────┤
-└─────────┘
-✅ Coverage report saved to: /Users/yash/Desktop/personal-utility-code-repos/calculate-api-test-coverage-script/out/api_test_coverage_git-workspace-service.txt
