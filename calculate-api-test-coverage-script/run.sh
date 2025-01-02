@@ -19,5 +19,16 @@ fi
 
 echo "✅ Running the code in $CODE_DIR"
 
-# Run the command with the provided path
-node src/api-coverage.js "$CODE_DIR" > test_coverage.txt
+# Extract the last part of CODE_DIR (the directory name)
+DIR_NAME=$(basename "$CODE_DIR")
+
+# Generate a dynamic filename using the last part of CODE_DIR
+OUTPUT_FILE="./out/test_coverage_ai-qa_${DIR_NAME}.txt"  # Make it relative to the current directory
+
+# Create the "out" directory if it doesn't exist
+mkdir -p "$(dirname "$OUTPUT_FILE")"
+
+# Run the command with the provided path and redirect the output to the dynamically generated file
+node src/api-coverage.js "$CODE_DIR" > "$OUTPUT_FILE"
+
+echo "✅ Test coverage report saved to $OUTPUT_FILE"
